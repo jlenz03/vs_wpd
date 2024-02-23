@@ -8,9 +8,10 @@ class ReviewMeta extends Singleton
     const CITY ='city';
     const STATE ='state';
     const RATING ='rating';
-    //const BOOKID ='bookid';
+    const BOOK ='book';
 
-    //name, state, rating, book id
+
+    //name, state, rating, book title
 
     protected static $instance;
 
@@ -38,6 +39,7 @@ class ReviewMeta extends Singleton
         $name = get_post_meta($post->ID, self::NAME, true);
         $city = get_post_meta($post->ID, self::CITY, true);
         $state = get_post_meta($post->ID, self::STATE, true);
+        $book = get_post_meta($post->ID, self::BOOK, true);
         //$bookid = get_post_meta($post->ID, self::BOOKID, true);
         ?>
             <p>
@@ -58,25 +60,25 @@ class ReviewMeta extends Singleton
                 <input type="text" name="city" id="city" value="<?= $city ?>">
                 <input type="text" name="state" id="state" value="<?= $state ?>">
 <br>
-               <p> Select a Book:
+            <p> Select a Book:
                 <select name="book">
-                    <?php $query = new \WP_Query([
-                            'author' => get_the_author('ID') ,
-                            'post_type' => 'book'
+                    <option value="">Select a Book</option>
+                    <?php
+                    $books_query = new \WP_Query([
+                        'post_type' => 'book',
+                        'posts_per_page' => -1,
                     ]);
-                    while($query->have_posts()) {
-                        $query->the_post();
 
-
+                    while ($books_query->have_posts()) {
+                        $books_query->the_post();
+                        $selected = ($book && $book == get_the_ID()) ? 'selected' : '';
+                        ?>
+                        <option value="<?php the_ID(); ?>" <?php echo $selected; ?>><?php the_title(); ?></option>
+                        <?php
+                    }
+                    wp_reset_postdata();
                     ?>
-                    <option value="<?php the_title()?>"> <?php the_title(); ?> </option>
-                    <?php }
-    ?>
-
                 </select>
-
-
-
             </p>
 
 <?php

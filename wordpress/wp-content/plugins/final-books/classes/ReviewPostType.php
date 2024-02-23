@@ -82,7 +82,12 @@ class ReviewPostType extends Singleton
             $name = get_post_meta($post->ID, ReviewMeta::NAME, true);
            $city = get_post_meta($post->ID, ReviewMeta::CITY, true);
            $state = get_post_meta($post->ID, ReviewMeta::STATE, true);
-           //$bookid = get_post_meta($post->ID, ReviewMeta::BOOKID, true);
+           $book_title = get_post_meta($post->ID, ReviewMeta::BOOK, true);
+
+           // Log the $book_title to the error log
+           error_log('Book Title: ' . print_r($book_title, true));
+
+
 
 
             $content = '<h3 class="border-bottom py-2"> Description</h3>
@@ -90,6 +95,7 @@ class ReviewPostType extends Singleton
                 <br>
                 <h3 class="border-bottom py-2">About</h3>
                 <div>
+                <p> Name of Book:' . $book_title .'</p>
                     <p>User:' . $name . '</p>
                     <br>
                      <p>Rating:' . $rating . '</p>
