@@ -5,8 +5,7 @@ namespace BookPlugin;
 class ReviewMeta extends Singleton
 {
     const NAME ='name';
-    const CITY ='city';
-    const STATE ='state';
+    const LOCATION ='location';
     const RATING ='rating';
     const BOOK ='book';
 
@@ -37,14 +36,14 @@ class ReviewMeta extends Singleton
         $post = get_post();
         $rating = get_post_meta($post->ID, self::RATING, true);
         $name = get_post_meta($post->ID, self::NAME, true);
-        $city = get_post_meta($post->ID, self::CITY, true);
-        $state = get_post_meta($post->ID, self::STATE, true);
+        $location = get_post_meta($post->ID, self::LOCATION, true);
         $book = get_post_meta($post->ID, self::BOOK, true);
         //$bookid = get_post_meta($post->ID, self::BOOKID, true);
         ?>
             <p>
                 <!--how the heck to I make the rating into radio buttons?? am i dumb??-->
                <label for="rating"> Rating: </label>
+                <br>
                 <select name="rating" id="rating" value="<?= $rating?>">
                     <option value="&starf;"> &starf; </option>
                     <option value="&starf;&starf;"> &starf;&starf;</option>
@@ -53,12 +52,14 @@ class ReviewMeta extends Singleton
                     <option value="&starf;&starf;&starf;&starf;&starf;"> &starf;&starf;&starf;&starf;&starf;</option>
                 </select>
 <br>
-                <label for="name"> Name: </label>
+                <label for="name"> Reviewer's Name: </label>
+                <br>
                 <input type="text" name="name" id="name" value="<?= $name ?>">
 <br>
                 <label for="name"> Location: </label>
-                <input type="text" name="city" id="city" value="<?= $city ?>">
-                <input type="text" name="state" id="state" value="<?= $state ?>">
+                <br>
+                <input type="text" name="location" id="location" value="<?= $location ?>">
+<!--                <input type="text" name="state" id="state" value="--><?//= $state ?><!--">-->
 <br>
             <p> Select a Book:
                 <select name="book">
@@ -102,19 +103,21 @@ class ReviewMeta extends Singleton
                 update_post_meta($post->ID, self::NAME, $name);
             }
 
-            if (isset($_POST['state'])) {
-                $state = sanitize_text_field($_POST['state']);
+            if (isset($_POST['location'])) {
+                $location = sanitize_text_field($_POST['location']);
 
                 //insert/update database
-                update_post_meta($post->ID, self::STATE, $state);
+                update_post_meta($post->ID, self::LOCATION, $location);
             }
 
-//            if (isset($_POST['bookid'])) {
-//                $bookid = sanitize_text_field($_POST['bookid']);
-//
-//                //insert/update database
-//                update_post_meta($post->ID, self::BOOKID, $bookid);
-//            }
+            // Check if book ID is selected
+            if (isset($_POST['book'])) {
+                $book_id = intval($_POST['book']);
+                // Get the book title from its ID
+                $book_title = get_the_title($book_id);
+                // Insert/update book title in database
+                update_post_meta($post->ID, self::BOOK, $book_title);
+            }
 
         }
 }
