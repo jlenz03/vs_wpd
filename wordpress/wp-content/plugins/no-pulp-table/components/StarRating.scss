@@ -1,0 +1,14 @@
+
+.stars {
+  .star {
+	&:hover {
+	  cursor:pointer;
+	}
+	&.on{
+	  color: #f5d46b;
+	}
+	&.off {
+	  color: grey;
+	}
+  }
+}

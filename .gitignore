@@ -22,5 +22,6 @@
 
 # … except our stuff.
 !/wordpress/wp-content/plugins/final-books/
+!/wordpress/wp-content/plugins/no-pulp-table/
 !/wordpress/wp-content/themes/lifestylepress-child
 

@@ -94,7 +94,7 @@ class ReviewPostType extends Singleton
                 <h3 class="border-bottom py-2">About</h3>
                 <div>
                 
-                    <p>User: ' . $name . '</p>
+                    <p><i class="fa-regular fa-user"></i> ' . $name . '</p>
                 
                      <p>Rating: ' . $rating . '</p>
                      

@@ -13,7 +13,7 @@ Template: lifestylepress
 
 body {
     background-color: #FCFCFC;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Playfair Display', Sans-serif;
 }
 body .swidgets-wrap h3 {
     color: #B3191C;
@@ -23,7 +23,7 @@ body .swidgets-wrap h3 {
 }
 header {
     color: #3d405b;
-    font-family: Arvo, sans-serif;
+    font-family: "PT Serif", serif;
 }
 body .wp-block-button__link {
     background-color: #3d405b;

@@ -41,7 +41,7 @@ class ReviewMeta extends Singleton
         //$bookid = get_post_meta($post->ID, self::BOOKID, true);
         ?>
             <p>
-                <!--how the heck to I make the rating into radio buttons?? am i dumb??-->
+
                <label for="rating"> Rating: </label>
                 <br>
                 <select name="rating" id="rating" value="<?= $rating?>">

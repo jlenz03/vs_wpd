@@ -85,7 +85,7 @@ class BookPostType extends Singleton
 
             $content = '<h3 class="border-bottom py-2"> Synopsis: </h3>
                 <div>' . $content . '</div>
-                <br>
+                
                 <h3 class="border-bottom py-2">About the Book</h3>
                 <div>
                     <p>Publisher: ' . $publisher . '</p>

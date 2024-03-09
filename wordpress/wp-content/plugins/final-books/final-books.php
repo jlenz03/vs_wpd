@@ -7,7 +7,7 @@
  *
  */
 
-
+//
 //this is the only thing that needs to be unique in our plugin
 //to access anything in this plugin outside this plugin we use
 //BookPlugin\function_name() or BookPlugin\ClassName
@@ -22,6 +22,7 @@ include __DIR__ . '/classes/BookMeta.php';
 include __DIR__ . '/classes/ReviewMeta.php';
 include __DIR__ . '/classes/ReviewPostType.php';
 require_once plugin_dir_path(__FILE__). "classes/BookWidget.php";
+
 add_action('widgets_init', function(){
     register_widget('bookWidget');
 });
