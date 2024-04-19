@@ -40,21 +40,25 @@ class BookMeta extends Singleton
         ?>
             <div>
                 <label for="publisher">Publisher:</label>
+                <br>
                 <input type="text" name="publisher" id="publisher" value="<?= $publisher ?>">
             </div>
 
             <div>
                 <label for="date">Date:</label>
+                <br>
                 <input type="text" name="date" id="date" value="<?= $date ?>">
             </div>
 
             <div>
                 <label for="pagecount">Page Count:</label>
+                <br>
                 <input type="text" name="pagecount" id="pagecount" value="<?= $pagecount ?>">
             </div>
 
             <div>
                 <label for="price">Price:</label>
+                <br>
                 <input type="text" name="price" id="price" value="<?= $price ?>">
             </div>
 
