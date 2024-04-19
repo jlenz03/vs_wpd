@@ -17,6 +17,8 @@ function lifestylepress_enqueue_styles(){
         ['lifestylepress-parent-style'],
         $theme->get('Version')
     );
+    // Enqueue Font Awesome
+    wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css', [], '5.15.4');
 }
 
 

@@ -11,6 +11,9 @@
   margin-bottom: 20px;
   display: flex;
   flex-wrap: wrap;
+   h1,h2{
+	color: #B3191C;
+  }
 
   .review-card {
 	max-width: 1000px;
@@ -31,6 +34,7 @@
 	}
    p{
 	 margin-bottom: 5px;
+	 font-family: 'PT Serif' ,Serif;
    }
 	 h6, h2 {
 	  margin: 0;

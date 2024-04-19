@@ -13,12 +13,12 @@ Template: lifestylepress
 
 body {
     background-color: #FCFCFC;
-    font-family: 'Playfair Display', Sans-serif;
+    font-family: 'PT Serif', serif;
 }
-body .swidgets-wrap h3 {
+body .swidgets-wrap h3, h1 {
     color: #B3191C;
 }
- body .main-navigation a:hover, .main-navigation ul li.current_page_ancestor a,  .main-navigation ul li.current-menu-ancestor a, .main-navigation ul li.current_page_item a, .main-navigation ul li:hover > a  {
+ body .main-navigation a:hover, .main-navigation ul li.current_page_ancestor a,  .main-navigation ul li.current-menu-ancestor a, .main-navigation ul li.current_page_item a, .main-navigation ul li:hover > a{
     background-color: #B3191C;
 }
 header {
@@ -54,6 +54,10 @@ body .archive-description{
 body .wpcf7-form-control .has-spinner .wpcf7-submit {
     color: #B3191C;
 }
- body  h3 .border-bottom .py-2 {
+ body  h2, body h3 ,.border-bottom .py-2 {
      color: #B3191C;
+ }
+ body .about-description p {
+     margin: 0;
+     padding:0;
  }

@@ -88,17 +88,17 @@ class ReviewPostType extends Singleton
 
 
 
-
             $content = '<h2>  <strong>' . $book_title .'</strong> Review</h2>
-                <div>' . $content . '</div>               
-                <h3 class="border-bottom py-2">About</h3>
-                <div>
+                <div>' . $content . '</div>    
+                <br>           
+                <h2 class="border-bottom py-2 card-title">Review Details</h2>
+                <div class="about-description col-md-5">
                 
-                    <p><i class="fa-regular fa-user"></i> ' . $name . '</p>
+                    <p><i class="fas fa-user"></i> ' . $name . ' ' . $rating . '</p>
                 
-                     <p>Rating: ' . $rating . '</p>
+                   
                      
-                      <p>Location: ' . $location . ' </p>
+                      <p><i class="fas fa-map-marker-alt"></i> ' . $location . ' </p>
                      
                     </div>';
         }

@@ -20,20 +20,21 @@ $query = new WP_Query([
 	$query->the_post(); ?>
 	<div class="review-card" style="background-color: <?= $attributes['cardColor'] ?>">
             <?php if ($attributes['showTitle']): ?>
-                <h2 style="color: <?= $attributes['headingColor'] ?>"><?= get_the_title() ?></h2>
+                <h2 style="color: <?= $attributes['headingColor'] ?>"> <?= get_the_title() ?></h2>
             <?php endif; ?>
 
             <?php if ($attributes['showBook']): ?>
-                <p style="color: <?= $attributes['textColor'] ?>"><strong><?= get_post_meta(get_the_ID(), 'book', true) ?></strong></p>
+                <p style="color: <?= $attributes['textColor'] ?>"><strong>  <i class="fas fa-book"></i> <?= get_post_meta(get_the_ID(), 'book', true) ?></strong></p>
             <?php endif; ?>
 		<StarRating rating={rating} readonly></StarRating>
 
             <?php if ($attributes['showMeta']): ?>
                 <div class="meta" style="color: <?= $attributes['textColor'] ?>">
-                    <p><i class="fa-regular fa-user"></i><?= get_post_meta(get_the_ID(), 'name', true) ?><strong><?= get_post_meta(get_the_ID(), 'rating', true) ?></strong></p>
-                    <p><?= get_post_meta(get_the_ID(), 'location', true) ?></p>
+                    <p><i class="fas fa-user"></i> <?= get_post_meta(get_the_ID(), 'name', true) ?> <strong><?= get_post_meta(get_the_ID(), 'rating', true) ?></strong></p>
+                    <p><i class="fas fa-map-marker-alt"></i> <?= get_post_meta(get_the_ID(), 'location', true) ?></p>
                 </div>
             <?php endif; ?>
+		<br>
 
             <?php if ($attributes['showDescription']): ?>
                 <div class="" style="color: <?= $attributes['textColor'] ?>">

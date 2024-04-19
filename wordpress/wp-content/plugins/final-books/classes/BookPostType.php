@@ -83,16 +83,29 @@ class BookPostType extends Singleton
            $pagecount = get_post_meta($post->ID, BookMeta::PAGECOUNT, true);
            $price = get_post_meta($post->ID, BookMeta::PRICE, true);
 
-            $content = '<h3 class="border-bottom py-2"> Synopsis: </h3>
-                <div>' . $content . '</div>
-                
-                <h3 class="border-bottom py-2">About the Book</h3>
-                <div>
-                    <p>Publisher: ' . $publisher . '</p>
-                    <p>Release date: ' . $date . '</p>
-                     <p>Page Count: ' . $pagecount . '</p>
-                      <p>Price: ' . $price . '</p>
-                    </div> ';
+            $content = '
+                        <div class="row mb-4">
+    <div class="col-md-5">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">Book Details</h3>
+                                <div class="about-description col-md-5">
+                                    <p ><strong>Publisher:</strong> ' . $publisher . '</p>
+                                    <p ><strong>Release Date:</strong> ' . $date . '</p>
+                              
+                                    <p ><strong>Page Count:</strong> ' . $pagecount . '</p>
+                                    <p ><strong>Price:</strong> ' . $price . '</p>
+                                </div>
+                            
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+
+<div class=" mt-4 mb-4">
+    ' . $content . '
+</div>';
         }
         //regardless of post type, return the content
         return $content;

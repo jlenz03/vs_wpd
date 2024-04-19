@@ -13,6 +13,9 @@
   display: flex;
   flex-wrap: wrap;
 }
+.wp-block-jl-review-list h1, .wp-block-jl-review-list h2 {
+  color: #B3191C;
+}
 .wp-block-jl-review-list .review-card {
   max-width: 1000px;
   margin: auto auto 20px auto;
@@ -26,6 +29,7 @@
 }
 .wp-block-jl-review-list .review-card p {
   margin-bottom: 5px;
+  font-family: "PT Serif", Serif;
 }
 .wp-block-jl-review-list .review-card h6, .wp-block-jl-review-list .review-card h2 {
   margin: 0;

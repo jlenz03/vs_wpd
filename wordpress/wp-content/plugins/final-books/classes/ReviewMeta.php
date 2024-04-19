@@ -40,28 +40,33 @@ class ReviewMeta extends Singleton
         $book = get_post_meta($post->ID, self::BOOK, true);
         //$bookid = get_post_meta($post->ID, self::BOOKID, true);
         ?>
-            <p>
-
-               <label for="rating"> Rating: </label>
+            <div>
+                <label for="rating">Rating:</label>
                 <br>
                 <select name="rating" id="rating" value="<?= $rating?>">
-                    <option value="&starf;"> &starf; </option>
-                    <option value="&starf;&starf;"> &starf;&starf;</option>
-                    <option value="&starf;&starf;&starf;"> &starf;&starf;&starf;</option>
-                    <option value="&starf;&starf;&starf;&starf;"> &starf;&starf;&starf;&starf;</option>
-                    <option value="&starf;&starf;&starf;&starf;&starf;"> &starf;&starf;&starf;&starf;&starf;</option>
+                    <option value="&starf;">&starf;</option>
+                    <option value="&starf;&starf;">&starf;&starf;</option>
+                    <option value="&starf;&starf;&starf;">&starf;&starf;&starf;</option>
+                    <option value="&starf;&starf;&starf;&starf;">&starf;&starf;&starf;&starf;</option>
+                    <option value="&starf;&starf;&starf;&starf;&starf;">&starf;&starf;&starf;&starf;&starf;</option>
                 </select>
-<br>
-                <label for="name"> Reviewer's Name: </label>
+            </div>
+
+            <div>
+                <label for="name">Reviewer's Name:</label>
                 <br>
                 <input type="text" name="name" id="name" value="<?= $name ?>">
-<br>
-                <label for="name"> Location: </label>
+            </div>
+
+            <div>
+                <label for="location">Location:</label>
                 <br>
                 <input type="text" name="location" id="location" value="<?= $location ?>">
-<!--                <input type="text" name="state" id="state" value="--><?//= $state ?><!--">-->
-<br>
-            <p> Select a Book:
+            </div>
+
+            <div>
+                <label for="book">Select a Book:</label>
+                <br>
                 <select name="book">
                     <option value="">Select a Book</option>
                     <?php
@@ -80,9 +85,10 @@ class ReviewMeta extends Singleton
                     wp_reset_postdata();
                     ?>
                 </select>
-            </p>
+            </div>
 
-<?php
+
+            <?php
         }
         public function saveReviewMeta()
         {

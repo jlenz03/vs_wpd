@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       No Pulp Table
- * Description:       For those who don&#39;t like extra pulp in their oj
+ * Description:       For those who don't like extra pulp in their oj
  * Requires at least: 6.1
  * Requires PHP:      7.0
  * Version:           0.1.0
@@ -29,4 +29,12 @@ function no_pulp_table_no_pulp_table_block_init() {
 	register_block_type( __DIR__ . '/build/blocks/review-list' );
 }
 add_action( 'init', 'no_pulp_table_no_pulp_table_block_init' );
+
+// Include Font Awesome CSS file
+function include_font_awesome() {
+	// Load Font Awesome from CDN
+	wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css', array(), '5.15.4', 'all');
+}
+add_action('wp_enqueue_scripts', 'include_font_awesome');
+
 include "patterns.php";

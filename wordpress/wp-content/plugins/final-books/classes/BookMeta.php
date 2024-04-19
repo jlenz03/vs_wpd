@@ -38,22 +38,28 @@ class BookMeta extends Singleton
         $price = get_post_meta($post->ID, self::PRICE, true);
 
         ?>
-            <p>
-               <label for="publisher"> publisher: </label>
-                <input type="text" name="publisher" id="publisher" value=" <?= $publisher ?>">
-                <br>
-                <label for="date"> date: </label>
-                <input type="text" name="date" id="date" value=" <?= $date ?>">
-                <br>
-                <label for="pagecount"> Page Count: </label>
+            <div>
+                <label for="publisher">Publisher:</label>
+                <input type="text" name="publisher" id="publisher" value="<?= $publisher ?>">
+            </div>
+
+            <div>
+                <label for="date">Date:</label>
+                <input type="text" name="date" id="date" value="<?= $date ?>">
+            </div>
+
+            <div>
+                <label for="pagecount">Page Count:</label>
                 <input type="text" name="pagecount" id="pagecount" value="<?= $pagecount ?>">
-                <br>
-                <label for="price"> Price: </label>
+            </div>
+
+            <div>
+                <label for="price">Price:</label>
                 <input type="text" name="price" id="price" value="<?= $price ?>">
+            </div>
 
-            </p>
 
-<?php
+            <?php
         }
         public function saveBookMeta()
         {
